@@ -1,0 +1,103 @@
+1. Query to Find the Countries with the Highest Temperatures in the Dataset
+
+
+SELECT 
+    Country, 
+    Temperature
+FROM 
+    country_pollution
+ORDER BY 
+    Temperature DESC
+LIMIT 1;
+This query will give you the country with the highest temperature in the dataset.
+
+2. Query to Identify the Countries with the Lowest CO2 Emissions in the Dataset
+
+
+SELECT 
+    Country, 
+    CO2_Emissions
+FROM 
+    country_pollution
+ORDER BY 
+    CO2_Emissions ASC
+LIMIT 1;
+This query will return the country with the lowest CO2 emissions.
+
+3. Query to Find All Temperature Records Above a Specific Value (e.g., 20°C)
+
+
+SELECT 
+    Country, 
+    Temperature, 
+    Date
+FROM 
+    country_pollution
+WHERE 
+    Temperature > 20;
+This query lists all records where the temperature is above 20°C.
+
+4. Query to List All Countries with CO2 Emissions Data Available for the Year 2020
+
+
+SELECT 
+    Country, 
+    CO2_Emissions
+FROM 
+    country_pollution
+WHERE 
+    Date = 2020;
+This query retrieves all countries that have CO2 emissions data for the year 2020.
+
+5. Query to Count the Total Number of Temperature Records in the Dataset
+
+
+SELECT 
+    COUNT(*) AS TotalTemperatureRecords
+FROM 
+    country_pollution;
+This query counts the total number of temperature records in the dataset.
+
+6. Query to Identify Any Countries with Missing Temperature Data for a Specific Year (e.g., 2015)
+
+
+SELECT 
+    Country
+FROM 
+    country_pollution
+WHERE 
+    Temperature IS NULL 
+    AND Date = 2015;
+This query finds countries that have missing temperature data for the year 2015.
+
+7. Query to Find the Average Temperature for Each Year in the Dataset
+
+
+SELECT 
+    Date AS Year, 
+    AVG(Temperature) AS AverageTemperature
+FROM 
+    country_pollution
+GROUP BY 
+    Date;
+This query calculates the average temperature for each year in the dataset.
+
+8. Query to Calculate the Total CO2 Emissions for All Countries in the Dataset
+
+
+SELECT 
+    SUM(CO2_Emissions) AS TotalCO2Emissions
+FROM 
+    country_pollution;
+
+9. Query to Sort the Temperature Data in Descending Order Based on the Temperature Values
+
+
+SELECT 
+    Country, 
+    Temperature, 
+    Date
+FROM 
+    country_pollution
+ORDER BY 
+    Temperature DESC;
